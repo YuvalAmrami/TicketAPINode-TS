@@ -20,7 +20,17 @@ services:
       PMA_ARBITRARY: 1
     ports:
       - 8081:80
-
+  
+  app:
+    build: 
+      context: "."
+    env_file: ./.env
+    restart: unless-stopped
+    environment:
+      DB_PORT: 3306
+      DB_HOST: mysql
+    ports:
+      - 3000:3000
 
 volumes:
   db:

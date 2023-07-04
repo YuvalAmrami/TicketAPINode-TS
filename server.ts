@@ -1,7 +1,9 @@
-import express from "express";
+// import express from "express";
+const express = require('express');
+
 import 'dotenv/config';
 import dbInit from "./services/dbConnection";
-
+import ticketsRouter from "./routers/ticketRouter"
 
 const port = 3000;
 
@@ -18,6 +20,8 @@ async function main() {
     const app = express();
     app.use(express.json());
     
+    app.use("/tickets", ticketsRouter);
+
 
     app.get("/", (req, res) => {
         res.send({
