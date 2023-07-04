@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+      "target": "ES2018",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "moduleResolution": "node",
+      "lib": ["es2018"],
+      "esModuleInterop": true,
+      "outDir": "./dist",
+    }
+  }
